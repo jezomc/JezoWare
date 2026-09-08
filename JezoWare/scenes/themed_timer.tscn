@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b1f1atr5oa2lh"]
+
+[ext_resource type="Script" uid="uid://dwm4g8e6l6rn4" path="res://themed_timer.gd" id="1_d1dk1"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="2_c62yt"]
+
+[node name="Themed Timer" type="Node2D" unique_id=181797989]
+script = ExtResource("1_d1dk1")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=725232726]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 529.0
+offset_top = 19.0
+offset_right = 620.0
+offset_bottom = 82.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_c62yt")
+theme_override_font_sizes/normal_font_size = 52
+text = "0.0"
+scroll_active = false
+horizontal_alignment = 1

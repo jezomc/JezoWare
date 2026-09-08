@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://twkvs4jodhe0"]
+
+[ext_resource type="Script" uid="uid://cwhtocuuq1e6s" path="res://scenes/minigame_1.gd" id="1_fa05o"]
+[ext_resource type="Texture2D" uid="uid://deye708sn7842" path="res://backgroundsky.png" id="1_og05i"]
+[ext_resource type="PackedScene" uid="uid://pohc4vaey12c" path="res://scenes/player.tscn" id="2_lmjug"]
+[ext_resource type="Script" uid="uid://33v6fs8ml2dc" path="res://scenes/snowball.gd" id="2_v5ebm"]
+[ext_resource type="Texture2D" uid="uid://oflyf0eesaey" path="res://snowball.png" id="3_lmjug"]
+[ext_resource type="PackedScene" uid="uid://b1f1atr5oa2lh" path="res://scenes/themed_timer.tscn" id="6_j1cg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3djl"]
+size = Vector2(43.902435, 29.615387)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14d73"]
+size = Vector2(500, 62)
+
+[sub_resource type="Animation" id="Animation_v5ebm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fa05o"]
+resource_name = "floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1cg4"]
+_data = {
+&"RESET": SubResource("Animation_v5ebm"),
+&"floating": SubResource("Animation_fa05o")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c3djl"]
+radius = 33.06055
+
+[node name="minigame_1" type="Node2D" unique_id=1028738443]
+script = ExtResource("1_fa05o")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1594323098]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1286935811]
+offset_right = 1151.0
+offset_bottom = 648.0
+scale = Vector2(1.0008476, 1.0000225)
+texture = ExtResource("1_og05i")
+expand_mode = 1
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1319294546]
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1834990805]
+offset_top = 587.0
+offset_right = 37.402596
+offset_bottom = 627.7898
+scale = Vector2(30.800003, 1.5199902)
+color = Color(0.1452, 0.050399993, 0.24, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1918167455]
+position = Vector2(576, 617.8)
+scale = Vector2(26.240004, 2.0800002)
+shape = SubResource("RectangleShape2D_c3djl")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=860582402]
+position = Vector2(18, -182)
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=348727021]
+offset_top = 587.0
+offset_right = 16.233765
+offset_bottom = 627.7898
+scale = Vector2(30.800003, 1.5199902)
+color = Color(0.1452, 0.050399993, 0.24, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=2003945568]
+position = Vector2(250, 618)
+shape = SubResource("RectangleShape2D_14d73")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1090616814]
+position = Vector2(620, -181)
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1495848980]
+offset_top = 587.0
+offset_right = 16.233765
+offset_bottom = 627.7898
+scale = Vector2(30.800003, 1.5199902)
+color = Color(0.1452, 0.050399993, 0.24, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1980855545]
+position = Vector2(250, 618)
+shape = SubResource("RectangleShape2D_14d73")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=823035509]
+position = Vector2(316, -357)
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=1450955846]
+offset_top = 587.0
+offset_right = 16.233765
+offset_bottom = 627.7898
+scale = Vector2(30.800003, 1.5199902)
+color = Color(0.1452, 0.050399993, 0.24, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1868113396]
+position = Vector2(250, 618)
+shape = SubResource("RectangleShape2D_14d73")
+
+[node name="Snowball" type="Node2D" parent="." unique_id=166456544]
+position = Vector2(227, 329)
+script = ExtResource("2_v5ebm")
+
+[node name="Snowball" type="TextureRect" parent="Snowball" unique_id=1440614890]
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Snowball/Snowball" unique_id=291139196]
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+autoplay = &"floating"
+
+[node name="Area2D" type="Area2D" parent="Snowball" unique_id=896367908]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball/Area2D" unique_id=454284131]
+position = Vector2(36, 36)
+shape = SubResource("CircleShape2D_c3djl")
+
+[node name="Snowball2" type="Node2D" parent="." unique_id=957533942]
+position = Vector2(843, 329)
+script = ExtResource("2_v5ebm")
+
+[node name="Snowball" type="TextureRect" parent="Snowball2" unique_id=1670551805]
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Snowball2/Snowball" unique_id=1293085315]
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+autoplay = &"floating"
+
+[node name="Area2D" type="Area2D" parent="Snowball2" unique_id=545840335]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball2/Area2D" unique_id=1445216954]
+position = Vector2(36, 36)
+shape = SubResource("CircleShape2D_c3djl")
+
+[node name="Snowball3" type="Node2D" parent="." unique_id=876795146]
+position = Vector2(528, 147)
+script = ExtResource("2_v5ebm")
+
+[node name="Snowball" type="TextureRect" parent="Snowball3" unique_id=113347355]
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Snowball3/Snowball" unique_id=613155164]
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+autoplay = &"floating"
+
+[node name="Area2D" type="Area2D" parent="Snowball3" unique_id=1380145147]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowball3/Area2D" unique_id=1316212539]
+position = Vector2(36, 36)
+shape = SubResource("CircleShape2D_c3djl")
+
+[node name="Player" parent="." unique_id=1636639020 instance=ExtResource("2_lmjug")]
+position = Vector2(51.000122, 536)
+scale = Vector2(5, 5)
+
+[node name="Themed Timer" parent="." unique_id=181797989 instance=ExtResource("6_j1cg4")]
+
+[connection signal="snowball_collected" from="Snowball" to="." method="snowball_collect"]
+[connection signal="snowball_collected" from="Snowball2" to="." method="snowball_collect"]
+[connection signal="snowball_collected" from="Snowball3" to="." method="snowball_collect"]

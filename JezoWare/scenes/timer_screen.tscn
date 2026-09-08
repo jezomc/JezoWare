@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dwcfekahtc5wo"]
+
+[ext_resource type="Script" uid="uid://dnqet0135vp8w" path="res://scenes/timer_screen.gd" id="1_0bi17"]
+[ext_resource type="Texture2D" uid="uid://cf0h7evml4po0" path="res://Background.png" id="1_j4q6p"]
+[ext_resource type="Texture2D" uid="uid://blt4blmkisfs6" path="res://lives.png" id="2_xna03"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="4_bseyb"]
+
+[node name="timer_screen" type="Node2D" unique_id=192997538]
+script = ExtResource("1_0bi17")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1906697327]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5996779, 0.5999392)
+texture = ExtResource("1_j4q6p")
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=14937275]
+offset_left = 185.0
+offset_top = 144.0
+offset_right = 5321.0
+offset_bottom = 1168.0
+scale = Vector2(0.15, 0.15)
+alignment = 1
+
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=187187389]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1905050537]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=2095982703]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=498790979]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=1574878743]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=395302535]
+offset_left = 475.0
+offset_top = 296.0
+offset_right = 684.0
+offset_bottom = 376.0
+theme_override_fonts/normal_font = ExtResource("4_bseyb")
+theme_override_font_sizes/normal_font_size = 52
+text = "Level #"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=905006605]
+offset_left = 524.0
+offset_top = 372.0
+offset_right = 627.0
+offset_bottom = 454.0
+theme_override_fonts/normal_font = ExtResource("4_bseyb")
+theme_override_font_sizes/normal_font_size = 52
+text = "0.0
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
