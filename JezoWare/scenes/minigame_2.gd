@@ -5,7 +5,7 @@ var buttons_pressed := 0
 var timer_end = false
 
 func _ready() -> void:
-	await themed_timer.Timer(7.0)
+	await themed_timer.Timer(3.0)
 	#after this is completed...
 	timer_end = true 
 
@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
 	
 	if timer_end:
-		Global.lives -= 1
+		Global.hearts -= 1
 		Global.minigames_done -=1
 		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")

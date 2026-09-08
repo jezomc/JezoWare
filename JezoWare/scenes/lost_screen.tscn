@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cu33dfl1e5thw"]
+
+[ext_resource type="Texture2D" uid="uid://p028w5ystqso" path="res://deathscreen.png" id="1_12qoe"]
+[ext_resource type="Texture2D" uid="uid://8gplndtgfa85" path="res://die.png" id="2_erjvp"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="3_0nhqw"]
+
+[node name="LostScreen" type="Node2D" unique_id=285407398]
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=884046119]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=434778831]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5996779, 0.5999392)
+texture = ExtResource("1_12qoe")
+
+[node name="Heart" type="TextureRect" parent="." unique_id=1588551922]
+offset_left = 322.0
+offset_top = 225.0
+offset_right = 1346.0
+offset_bottom = 1249.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_erjvp")
+
+[node name="Winner" type="RichTextLabel" parent="." unique_id=1081635385]
+clip_contents = false
+anchors_preset = -1
+offset_left = 298.0
+offset_top = 69.0
+offset_right = 868.3334
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 0.060000002, 0.07566643, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("3_0nhqw")
+theme_override_font_sizes/normal_font_size = 105
+bbcode_enabled = true
+text = "[shake]U Lost :("
+scroll_active = false
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooltext" type="RichTextLabel" parent="." unique_id=1567618446]
+clip_contents = false
+offset_left = 348.0
+offset_top = 182.0
+offset_right = 1240.0
+offset_bottom = 343.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.060000002, 0.060000002, 1)
+theme_override_constants/outline_size = 36
+theme_override_fonts/normal_font = ExtResource("3_0nhqw")
+theme_override_font_sizes/normal_font_size = 105
+text = "Try nex time"
+scroll_active = false
+horizontal_alignment = 1

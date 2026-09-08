@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b8bjjqgo1imsq"]
+
+[ext_resource type="Texture2D" uid="uid://b46ynxskyypwv" path="res://winnerscreen.png" id="1_2uytq"]
+[ext_resource type="Texture2D" uid="uid://ct7og01ltyj42" path="res://winnerface.png" id="2_vft0f"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="3_cuvn6"]
+
+[node name="WinnerScreen" type="Node2D" unique_id=802693396]
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=2063960636]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1087966168]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5996779, 0.5999392)
+texture = ExtResource("1_2uytq")
+
+[node name="Heart" type="TextureRect" parent="." unique_id=1828875913]
+offset_left = 322.0
+offset_top = 225.0
+offset_right = 1346.0
+offset_bottom = 1249.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vft0f")
+
+[node name="Winner" type="RichTextLabel" parent="." unique_id=2130157583]
+clip_contents = false
+anchors_preset = -1
+offset_left = 298.0
+offset_top = 69.0
+offset_right = 868.3334
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.99607843, 0.7647059, 0.05882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("3_cuvn6")
+theme_override_font_sizes/normal_font_size = 105
+bbcode_enabled = true
+text = "[wave amp=45 freq=7]Winner !"
+scroll_active = false
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooltext" type="RichTextLabel" parent="." unique_id=87821858]
+clip_contents = false
+offset_left = 348.0
+offset_top = 182.0
+offset_right = 1240.0
+offset_bottom = 343.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.99607843, 0.7647059, 0.05882353, 1)
+theme_override_constants/outline_size = 36
+theme_override_fonts/normal_font = ExtResource("3_cuvn6")
+theme_override_font_sizes/normal_font_size = 105
+text = "You are so cool"
+scroll_active = false
+horizontal_alignment = 1
