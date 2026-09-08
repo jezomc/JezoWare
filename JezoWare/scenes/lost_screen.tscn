@@ -24,7 +24,7 @@ offset_bottom = 1249.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_erjvp")
 
-[node name="Winner" type="RichTextLabel" parent="." unique_id=1081635385]
+[node name="Lose" type="RichTextLabel" parent="." unique_id=1081635385]
 clip_contents = false
 anchors_preset = -1
 offset_left = 298.0
@@ -40,7 +40,7 @@ theme_override_constants/outline_size = 30
 theme_override_fonts/normal_font = ExtResource("3_0nhqw")
 theme_override_font_sizes/normal_font_size = 105
 bbcode_enabled = true
-text = "[shake]U Lost :("
+text = "[shake]U Lose :("
 scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
