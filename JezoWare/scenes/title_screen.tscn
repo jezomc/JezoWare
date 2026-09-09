@@ -4,6 +4,18 @@
 [ext_resource type="Script" uid="uid://bwnhplnkd8qtj" path="res://scenes/title_screen.gd" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://blefofqeoi500" path="res://jezowarelogo.png" id="3_mgrm8"]
 [ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="3_s4lrb"]
+[ext_resource type="StyleBox" uid="uid://dkmso1yrrvanv" path="res://skybox.tres" id="5_dc4i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbtaf"]
+bg_color = Color(0.6858332, 0.35000002, 1, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc4i4"]
+bg_color = Color(0.31548327, 0.16100001, 0.46, 0.78431374)
+
+[sub_resource type="Theme" id="Theme_qy1b7"]
+Button/styles/hover = SubResource("StyleBoxFlat_jbtaf")
+Button/styles/normal = ExtResource("5_dc4i4")
+Button/styles/pressed = SubResource("StyleBoxFlat_dc4i4")
 
 [node name="TitleScreen" type="Node2D" unique_id=576477404]
 script = ExtResource("1_sa3yf")
@@ -50,21 +62,29 @@ offset_left = 469.0
 offset_top = 278.0
 offset_right = 698.0
 offset_bottom = 362.0
+theme = SubResource("Theme_qy1b7")
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=721583776]
 layout_mode = 2
-theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("3_s4lrb")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 32
 text = "Start Game
+"
+
+[node name="Keybinds" type="Button" parent="VBoxContainer" unique_id=1371043318]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s4lrb")
+theme_override_font_sizes/font_size = 32
+text = "Keybinds
+
 "
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=320704302]
 layout_mode = 2
-theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("3_s4lrb")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 32
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

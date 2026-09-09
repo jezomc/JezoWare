@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bwnqp8rvqrnto"]
+
+[ext_resource type="Script" uid="uid://c5tdgsrimuq6m" path="res://scenes/keybinds.gd" id="1_bvkb1"]
+[ext_resource type="Texture2D" uid="uid://cf0h7evml4po0" path="res://Background.png" id="1_wcb4j"]
+[ext_resource type="Texture2D" uid="uid://itntojraws" path="res://keybinds.png" id="2_yd0o6"]
+[ext_resource type="StyleBox" uid="uid://dkmso1yrrvanv" path="res://skybox.tres" id="3_pf2fv"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="4_bvkb1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbtaf"]
+bg_color = Color(0.6858332, 0.35000002, 1, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc4i4"]
+bg_color = Color(0.31548327, 0.16100001, 0.46, 0.78431374)
+
+[sub_resource type="Theme" id="Theme_i0c7i"]
+Button/styles/hover = SubResource("StyleBoxFlat_jbtaf")
+Button/styles/normal = ExtResource("3_pf2fv")
+Button/styles/pressed = SubResource("StyleBoxFlat_dc4i4")
+
+[node name="keybinds" type="Node2D" unique_id=220886432]
+script = ExtResource("1_bvkb1")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=867172476]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=829431442]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5996779, 0.5999392)
+texture = ExtResource("1_wcb4j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1515936672]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_yd0o6")
+expand_mode = 1
+
+[node name="Okay" type="Button" parent="." unique_id=587189278]
+offset_left = 876.0
+offset_top = 553.0
+offset_right = 1111.0
+offset_bottom = 601.0
+theme = SubResource("Theme_i0c7i")
+theme_override_fonts/font = ExtResource("4_bvkb1")
+theme_override_font_sizes/font_size = 32
+text = "Okay"
+
+[connection signal="pressed" from="Okay" to="." method="_on_okay_pressed"]

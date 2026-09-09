@@ -56,11 +56,7 @@ radius = 33.06055
 [node name="minigame_1" type="Node2D" unique_id=1028738443]
 script = ExtResource("1_fa05o")
 
-[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1594323098]
-repeat_size = Vector2(1000, 0)
-autoscroll = Vector2(100, 0)
-
-[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1286935811]
+[node name="Background" type="TextureRect" parent="." unique_id=1286935811]
 offset_right = 1151.0
 offset_bottom = 648.0
 scale = Vector2(1.0008476, 1.0000225)

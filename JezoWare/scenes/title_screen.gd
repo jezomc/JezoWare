@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
 
+func _on_keybinds_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/keybinds.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
