@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://33v6fs8ml2dc" path="res://scenes/snowball.gd" id="2_v5ebm"]
 [ext_resource type="Texture2D" uid="uid://oflyf0eesaey" path="res://snowball.png" id="3_lmjug"]
 [ext_resource type="PackedScene" uid="uid://b1f1atr5oa2lh" path="res://scenes/themed_timer.tscn" id="6_j1cg4"]
+[ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="7_vc5od"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3djl"]
 size = Vector2(43.902435, 29.615387)
@@ -184,6 +185,17 @@ position = Vector2(51.000122, 536)
 scale = Vector2(5, 5)
 
 [node name="Themed Timer" parent="." unique_id=181797989 instance=ExtResource("6_j1cg4")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=645138570]
+offset_left = 325.0
+offset_top = 80.0
+offset_right = 836.0
+offset_bottom = 127.0
+theme_override_fonts/normal_font = ExtResource("7_vc5od")
+theme_override_font_sizes/normal_font_size = 40
+text = "Collect all the Snowballs"
+scroll_active = false
+horizontal_alignment = 1
 
 [connection signal="snowball_collected" from="Snowball" to="." method="snowball_collect"]
 [connection signal="snowball_collected" from="Snowball2" to="." method="snowball_collect"]

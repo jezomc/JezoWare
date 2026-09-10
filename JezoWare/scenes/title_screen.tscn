@@ -5,6 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://blefofqeoi500" path="res://jezowarelogo.png" id="3_mgrm8"]
 [ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="3_s4lrb"]
 [ext_resource type="StyleBox" uid="uid://dkmso1yrrvanv" path="res://skybox.tres" id="5_dc4i4"]
+[ext_resource type="AudioStream" uid="uid://bx5s48ywwmt07" path="res://sounds/hover1.mp3" id="6_cs5ya"]
+[ext_resource type="AudioStream" uid="uid://ccc8katv0jhww" path="res://sounds/hover2.mp3" id="7_mykxm"]
+[ext_resource type="AudioStream" uid="uid://cbgmdq5px1qr" path="res://sounds/hover3.mp3" id="8_tklts"]
+[ext_resource type="AudioStream" uid="uid://dts0utvcnumnu" path="res://sounds/click.mp3" id="9_tklts"]
+[ext_resource type="AudioStream" uid="uid://c412myvykp7b" path="res://sounds/click2.mp3" id="10_u26n3"]
+[ext_resource type="AudioStream" uid="uid://dr8mwyrbbxx64" path="res://sounds/Audio/question_002.ogg" id="11_u26n3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbtaf"]
 bg_color = Color(0.6858332, 0.35000002, 1, 0.78431374)
@@ -40,9 +46,9 @@ texture = ExtResource("3_mgrm8")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=25897762]
 clip_contents = false
-offset_left = 418.0
+offset_left = 384.0
 offset_top = 575.0
-offset_right = 810.5072
+offset_right = 776.5072
 offset_bottom = 624.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -53,7 +59,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/normal_font = ExtResource("3_s4lrb")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[wave freq=2]A Stardance mission"
+text = "A [color=fec30f][wave freq=5 amp=30]Stardance[/wave] [color=white]mission"
 scroll_active = false
 horizontal_alignment = 1
 
@@ -85,6 +91,34 @@ theme_override_fonts/font = ExtResource("3_s4lrb")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
+[node name="sfx_hoverstart" type="AudioStreamPlayer" parent="." unique_id=1864196491]
+stream = ExtResource("6_cs5ya")
+volume_db = -10.0
+
+[node name="sfx_hoverkeybinds" type="AudioStreamPlayer" parent="." unique_id=1958065550]
+stream = ExtResource("7_mykxm")
+volume_db = -10.0
+
+[node name="sfx_hoverquit" type="AudioStreamPlayer" parent="." unique_id=197718008]
+stream = ExtResource("8_tklts")
+volume_db = -10.0
+
+[node name="sfx_clickstart" type="AudioStreamPlayer" parent="." unique_id=1738236630]
+stream = ExtResource("9_tklts")
+volume_db = -10.0
+
+[node name="sfx_clickkeybinds" type="AudioStreamPlayer" parent="." unique_id=579565536]
+stream = ExtResource("10_u26n3")
+volume_db = -10.0
+
+[node name="sfx_clickquit" type="AudioStreamPlayer" parent="." unique_id=1041491058]
+stream = ExtResource("11_u26n3")
+volume_db = -10.0
+
+[connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Keybinds" to="." method="_on_keybinds_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

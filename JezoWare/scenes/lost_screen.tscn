@@ -1,10 +1,25 @@
 [gd_scene format=3 uid="uid://cu33dfl1e5thw"]
 
+[ext_resource type="Script" uid="uid://br42tpegd2xyy" path="res://scenes/lost_screen.gd" id="1_0nhqw"]
 [ext_resource type="Texture2D" uid="uid://p028w5ystqso" path="res://deathscreen.png" id="1_12qoe"]
 [ext_resource type="Texture2D" uid="uid://8gplndtgfa85" path="res://die.png" id="2_erjvp"]
 [ext_resource type="FontFile" uid="uid://vkh66xorgqkw" path="res://fonts/PixeloidSans-lxa3y.ttf" id="3_0nhqw"]
+[ext_resource type="StyleBox" uid="uid://dkmso1yrrvanv" path="res://skybox.tres" id="5_5h5wx"]
+[ext_resource type="AudioStream" uid="uid://dl346e2mkiwr7" path="res://sounds/Audio/question_004.ogg" id="6_5h5wx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbtaf"]
+bg_color = Color(0.6858332, 0.35000002, 1, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc4i4"]
+bg_color = Color(0.31548327, 0.16100001, 0.46, 0.78431374)
+
+[sub_resource type="Theme" id="Theme_emgh4"]
+Button/styles/hover = SubResource("StyleBoxFlat_jbtaf")
+Button/styles/normal = ExtResource("5_5h5wx")
+Button/styles/pressed = SubResource("StyleBoxFlat_dc4i4")
 
 [node name="LostScreen" type="Node2D" unique_id=285407398]
+script = ExtResource("1_0nhqw")
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=884046119]
 repeat_size = Vector2(1000, 0)
@@ -62,3 +77,18 @@ theme_override_font_sizes/normal_font_size = 105
 text = "Try next time"
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="Okay" type="Button" parent="." unique_id=1672217928]
+offset_left = 876.0
+offset_top = 553.0
+offset_right = 1111.0
+offset_bottom = 601.0
+theme = SubResource("Theme_emgh4")
+theme_override_fonts/font = ExtResource("3_0nhqw")
+theme_override_font_sizes/font_size = 32
+text = "Okay :("
+
+[node name="sfx_okaybutton" type="AudioStreamPlayer" parent="." unique_id=1558035466]
+stream = ExtResource("6_5h5wx")
+
+[connection signal="pressed" from="Okay" to="." method="_on_okay_pressed"]
