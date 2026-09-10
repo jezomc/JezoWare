@@ -29,7 +29,7 @@ func _process(delta: float) -> void: # running every frame brochacho
 	if timer_end: # if the timer does end...
 		Global.minigames_done -=1 #go back a minigame
 		Global.hearts -= 1 # lose ur lives
-		SceneTransition.change_scene_to_file("res://scenes/timer_screen.tscn")# back to intermission
+		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")# back to intermission
 		
 
 func snowball_collect() -> void: # cool function that you connect to those garlics
