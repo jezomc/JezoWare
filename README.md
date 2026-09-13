@@ -15,7 +15,7 @@ In this minigame, you need to click on the polar bear face 4 times before the ti
 
 
 ## How to launch
-Simply , go to this site : https://jezodev.itch.io/jezoware and click on run game , wait for it to load and you are ready to go.
+Simply , go to this site : https://jezodev.itch.io/jezoware and click run game , wait for it to load and you are ready to go.
 
 ## Features
 - Cool wining and losing screen
