@@ -1,5 +1,6 @@
 # JezoWare
-A simple Wario ware like game where you can play minigames to win<img 
+A simple Wario ware like game where you can play minigames to win!
+
 <img width="640" height="360" alt="New Project (1)" src="https://github.com/user-attachments/assets/935581b6-e922-49dd-9858-556f6e61f726" />
 
 
